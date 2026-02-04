@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Progress</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Year Progress</h1>
+            <p class="subtitle">Time is passing. Here's how much.</p>
+        </header>
+
+        <main>
+            <div class="progress-card" id="year-card">
+                <div class="progress-header">
+                    <span class="progress-label">📅 Year</span>
+                    <span class="progress-value" id="year-value">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="year-fill"></div>
+                </div>
+                <div class="progress-detail" id="year-detail"></div>
+            </div>
+
+            <div class="progress-card" id="month-card">
+                <div class="progress-header">
+                    <span class="progress-label">🗓️ Month</span>
+                    <span class="progress-value" id="month-value">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="month-fill"></div>
+                </div>
+                <div class="progress-detail" id="month-detail"></div>
+            </div>
+
+            <div class="progress-card" id="week-card">
+                <div class="progress-header">
+                    <span class="progress-label">📆 Week</span>
+                    <span class="progress-value" id="week-value">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="week-fill"></div>
+                </div>
+                <div class="progress-detail" id="week-detail"></div>
+            </div>
+
+            <div class="progress-card" id="day-card">
+                <div class="progress-header">
+                    <span class="progress-label">⏰ Day</span>
+                    <span class="progress-value" id="day-value">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="day-fill"></div>
+                </div>
+                <div class="progress-detail" id="day-detail"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="life-section">
+                <h2>Your Life</h2>
+                <div class="birth-input">
+                    <label for="birth-year">Birth Year</label>
+                    <input type="number" id="birth-year" placeholder="1990" min="1900" max="2025">
+                    <button id="calculate-life">Calculate</button>
+                </div>
+
+                <div class="progress-card life-card" id="life-card" style="display: none;">
+                    <div class="progress-header">
+                        <span class="progress-label">💀 Life (avg 80 years)</span>
+                        <span class="progress-value" id="life-value">0%</span>
+                    </div>
+                    <div class="progress-bar life-bar">
+                        <div class="progress-fill life-fill" id="life-fill"></div>
+                    </div>
+                    <div class="progress-detail" id="life-detail"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="quote">"The bad news is time flies. The good news is you're the pilot."</p>
+            <p class="credits">Updates in real-time • <span id="current-time"></span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

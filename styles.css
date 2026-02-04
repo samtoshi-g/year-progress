@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #12121a;
+    --bg-card: #1a1a24;
+    --text-primary: #ffffff;
+    --text-secondary: #8b8b9e;
+    --text-muted: #5a5a6e;
+    --accent-year: #6366f1;
+    --accent-month: #8b5cf6;
+    --accent-week: #a855f7;
+    --accent-day: #d946ef;
+    --accent-life: #ef4444;
+    --progress-bg: #2a2a3a;
+    --border-subtle: #2a2a3a;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #6366f1 0%, #d946ef 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.progress-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-subtle);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.progress-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.1);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.progress-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.progress-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+#year-card .progress-value { color: var(--accent-year); }
+#month-card .progress-value { color: var(--accent-month); }
+#week-card .progress-value { color: var(--accent-week); }
+#day-card .progress-value { color: var(--accent-day); }
+#life-card .progress-value { color: var(--accent-life); }
+
+.progress-bar {
+    height: 12px;
+    background: var(--progress-bg);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease-out;
+    position: relative;
+}
+
+#year-fill {
+    background: linear-gradient(90deg, var(--accent-year) 0%, #818cf8 100%);
+}
+
+#month-fill {
+    background: linear-gradient(90deg, var(--accent-month) 0%, #a78bfa 100%);
+}
+
+#week-fill {
+    background: linear-gradient(90deg, var(--accent-week) 0%, #c084fc 100%);
+}
+
+#day-fill {
+    background: linear-gradient(90deg, var(--accent-day) 0%, #e879f9 100%);
+}
+
+#life-fill {
+    background: linear-gradient(90deg, var(--accent-life) 0%, #f87171 100%);
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-detail {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-subtle) 50%, transparent 100%);
+    margin: 1.5rem 0;
+}
+
+.life-section h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.birth-input {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.birth-input label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.birth-input input {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    width: 100px;
+    font-family: inherit;
+}
+
+.birth-input input:focus {
+    outline: none;
+    border-color: var(--accent-year);
+}
+
+.birth-input button {
+    background: var(--accent-year);
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.25rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-family: inherit;
+}
+
+.birth-input button:hover {
+    background: #4f46e5;
+}
+
+.life-card {
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.life-card:hover {
+    box-shadow: 0 8px 30px rgba(239, 68, 68, 0.15);
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.quote {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.credits {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .progress-card {
+        padding: 1.25rem;
+    }
+
+    .progress-value {
+        font-size: 1.25rem;
+    }
+
+    .birth-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .birth-input input {
+        width: 100%;
+    }
+}
+
+/* Animation for initial load */
+.progress-card {
+    animation: fadeInUp 0.5s ease-out backwards;
+}
+
+#year-card { animation-delay: 0.1s; }
+#month-card { animation-delay: 0.2s; }
+#week-card { animation-delay: 0.3s; }
+#day-card { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
