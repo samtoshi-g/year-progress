@@ -5,23 +5,23 @@
 }
 
 :root {
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-card: #1a1a24;
-    --text-primary: #ffffff;
-    --text-secondary: #8b8b9e;
-    --text-muted: #5a5a6e;
-    --accent-year: #6366f1;
-    --accent-month: #8b5cf6;
-    --accent-week: #a855f7;
-    --accent-day: #d946ef;
-    --accent-life: #ef4444;
-    --progress-bg: #2a2a3a;
-    --border-subtle: #2a2a3a;
+    --bg-primary: #1C1917;
+    --bg-secondary: #292524;
+    --bg-card: #292524;
+    --text-primary: #FAFAF9;
+    --text-secondary: #A8A29E;
+    --text-muted: #78716C;
+    --accent-year: #3B82F6;
+    --accent-month: #F472B6;
+    --accent-week: #FB923C;
+    --accent-day: #F87171;
+    --accent-life: #EF4444;
+    --progress-bg: #44403C;
+    --border-subtle: #44403C;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     min-height: 100vh;
@@ -44,7 +44,7 @@ h1 {
     font-weight: 600;
     letter-spacing: -0.02em;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #6366f1 0%, #d946ef 100%);
+    background: linear-gradient(135deg, #FB923C 0%, #F472B6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
